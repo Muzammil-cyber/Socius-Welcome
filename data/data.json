@@ -1,1 +1,6 @@
-[{"email":"EMAIL HERE","comment":"COMMENTS HERE"},{"email":"a@b.com","comment":"a"},{"email":"a@b.com","comment":"a"}]
+[
+    {
+        "email": "EMAIL HERE",
+        "comment": "COMMENTS HERE"
+    }
+]

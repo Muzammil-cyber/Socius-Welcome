@@ -1,5 +1,3 @@
-
-
 // export async function POST(req) {
 //     console.log(req.body);
 //     const body = req.body;
@@ -11,59 +9,59 @@
 
 import { NextResponse } from "next/server";
 
-import path from 'path'
-import fs from 'fs'
+import path from "path";
+import fs from "fs";
 import { log } from "console";
 
-
 function buildPath() {
-    return path.join(process.cwd(), 'data', 'data.json');
+  return path.join(process.cwd(), "data", "data.json");
 }
 
 function extractData(filePath) {
-    const jsonData = fs.readFileSync(filePath);
-    const data = JSON.parse(jsonData);
-    return data;
+  const jsonData = fs.readFileSync(filePath);
+  const data = JSON.parse(jsonData);
+  return data;
 }
 
 export async function POST(req) {
-    const { searchParams } = new URL(req.url)
-    const [email, comment] = searchParams.values();
-    const data = extractData(buildPath());
+  const { searchParams } = new URL(req.url);
+  const [email, comment] = searchParams.values();
+  const data = extractData(buildPath());
 
-    // CHECK FOR DUPLICATES
-    const duplicate = data.find((item) => item.email === email);
-    if (duplicate) {
-        return new Response(JSON.stringify({
-            error: "Duplicate email"
-        }), {
-            status: 400,
-            headers: {
-                "Content-Type": "application/json"
-            }
-        });
-    }
-    // ADD NEW ITEM
-    data.push({ email, comment });
-
-    fs.writeFileSync(buildPath(), JSON.stringify(data));
-    return new Response(JSON.stringify({
-        status: "success",
-        data
-    }), {
-        status: 200,
+  // CHECK FOR DUPLICATES
+  const duplicate = data.find((item) => item.email === email);
+  if (duplicate) {
+    return new Response(
+      JSON.stringify({
+        error: "Duplicate email",
+      }),
+      {
+        status: 400,
         headers: {
-            "content-type": "application/json; charset=utf-8"
-        }
-    }
+          "Content-Type": "application/json",
+        },
+      }
     );
+  }
+  // ADD NEW ITEM
+  data.push({ email, comment });
 
-    // return NextResponse.json({ comment, email });
+  fs.writeFileSync(buildPath(), JSON.stringify(data));
+  return new Response(
+    JSON.stringify({
+      status: "success",
+    }),
+    {
+      status: 200,
+      headers: {
+        "content-type": "application/json; charset=utf-8",
+      },
+    }
+  );
+
+  // return NextResponse.json({ comment, email });
 }
 
-
-
-
 export function GET() {
-    return { product: "You" };
+  return { product: "You" };
 }
