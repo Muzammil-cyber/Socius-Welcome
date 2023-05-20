@@ -1,5 +1,3 @@
-import "@/css/Cards.css";
-
 export default function Cards() {
   const cards = [
     {

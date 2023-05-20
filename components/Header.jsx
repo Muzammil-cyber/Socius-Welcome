@@ -1,8 +1,8 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-
 // import { useRouter } from 'next/router';
 
 const Header = () => {
@@ -27,7 +27,7 @@ const Header = () => {
     },
   ];
 
-  function handleClick() {
+  function HandleClick() {
     setName(usePathname());
     console.log(pathName);
   }
@@ -46,12 +46,20 @@ const Header = () => {
       <nav className="border-gray-200">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link href="/" className="flex items-center">
-            <img
-              src="Logo_1@1x.png"
-              className="h-10 mr-3 w-auto"
+            <Image
+              src="/Logo_1@1x.png"
+              className="h-12 mr-3 w-auto"
               alt="Sucious Logo"
+              height={500}
+              width={500}
             />
-            <img className="" src="Text_2x.png" />
+            <Image
+              height={500}
+              width={500}
+              className="h-10 w-auto"
+              src="/Text_2x.png"
+              alt="Text Sucious"
+            />
           </Link>
           <button
             data-collapse-toggle="navbar-default"
@@ -88,7 +96,7 @@ const Header = () => {
                     className={`nav-link block py-2 pl-3 pr-4 md:p-0 ${
                       pathName == link.href && "active"
                     }`}
-                    onClick={handleClick}
+                    onClick={HandleClick}
                   >
                     {link.text}
                   </Link>
