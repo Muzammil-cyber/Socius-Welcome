@@ -42,7 +42,7 @@ const Header = () => {
   }
 
   return (
-    <header className="sticky top-0">
+    <header className="sticky top-0 flex-none ">
       <nav className="border-gray-200">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link href="/" className="flex items-center">
@@ -93,9 +93,8 @@ const Header = () => {
                 <li key={link.index}>
                   <Link
                     href={link.href}
-                    className={`nav-link block py-2 pl-3 pr-4 md:p-0 ${
-                      pathName == link.href && "active"
-                    }`}
+                    className={`nav-link block py-2 pl-3 pr-4 md:p-0 ${pathName == link.href && "active"
+                      }`}
                     onClick={HandleClick}
                   >
                     {link.text}

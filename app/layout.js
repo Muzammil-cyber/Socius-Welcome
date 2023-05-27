@@ -12,11 +12,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="h-screen overflow-hidden">
-      <body className="d-flex h-full text-center text-white">
-        <div className="cover-container h-full p-3 mx-auto">
+      <body className="d-flex h-screen text-center text-white">
+        <div className="cover-container h-full p-3 mx-auto flex flex-col">
           <Header />
           {children}
-          {/* </main> */}
           <Footer />
         </div>
       </body>
