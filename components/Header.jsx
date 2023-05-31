@@ -49,7 +49,7 @@ const Header = () => {
             <Image
               src="/Logo_1@1x.png"
               className="h-12 mr-3 w-auto"
-              alt="Sucious Logo"
+              alt="Socius Logo"
               height={500}
               width={500}
             />
@@ -58,7 +58,7 @@ const Header = () => {
               width={500}
               className="h-10 w-auto"
               src="/Text_2x.png"
-              alt="Text Sucious"
+              alt="Text Socius"
             />
           </Link>
           <button

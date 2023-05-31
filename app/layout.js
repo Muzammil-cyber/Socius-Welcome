@@ -3,7 +3,7 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Sucious",
+  title: "Socius",
   description: "A facebook like app for Web3, where the user has control",
   viewport: "width=device-width, initial-scale=1",
   generator: "Hugo 0.108.0",
