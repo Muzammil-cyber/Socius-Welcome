@@ -1,4 +1,4 @@
-### Vist Site on: https://sucious-welcome.netlify.app
+### Vist Site on: [socius-welcome.vercel.app](https://socius-welcome.vercel.app)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
